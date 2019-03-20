@@ -8,11 +8,13 @@
       <!--<div class="app-servers"></div>-->
       <!--Task 1-->
       <hr>
+      <h3>Task 1</h3>
       <app-warning-alert></app-warning-alert>
       <app-success-alert></app-success-alert>
       <!--Task 1-->
-      <!--Task 2-->
+      <!--Task 2-->      
       <hr>
+      <h3>Task 2</h3>
       <label>Username</label>
       <input type="text" class="form-control" [(ngModel)]="username">
       <p>{{ username }}</p>
@@ -21,6 +23,18 @@
         [disabled]="username == ''"
         (click)="username=''">Reset User</button>
       <!--Task 2-->
+      <!--Task 3-->
+      <hr>
+      <h3>Task 3</h3>
+      <!--<button class="btn btn-primary" (click)="showSecret =! showSecret">Display Details</button>-->
+      <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div 
+        *ngFor="let logItem of log"
+        [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue':'transparent'}"
+        [ngClass]="{'white-text': logItem >= 5}"
+      >{{ logItem }}</div>
+      <!--Task 3-->
     </div>
   </div>
 </div>
